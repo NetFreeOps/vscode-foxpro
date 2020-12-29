@@ -7,6 +7,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>prg</string>
+		<string>fwx</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~A</string>
@@ -196,7 +197,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(If|Else|endif|Case|endcase|other|otherwise|Select|Return|With|EndWith|IIf|Try|Catch|EndTry|repl|replace)\b)</string>
+			<string>(?i:\b(If|Else|endif|Case|endcase|other|otherwise|Select|Return|With|EndWith|IIf|Try|Catch|EndTry|repl|replace|public|private)\b)</string>
 			<key>name</key>
 			<string>keyword.control.foxpro</string>
 		</dict>
@@ -261,7 +262,8 @@
 							wlcol|wlro|wlrow|wmax|wmaximum|wmin|wminimum|wont|wontop|wout|woutput|wpar|wparent|wrap|wrk|wrow|wrows|wtit|wtitle|wvis|wvisible|xls|xmlt|xmltocursor|xmlu|xmlupdategram|
 							year|ymd|zap|zoom)\b)</string>
 			<key>name</key>
-			<string>support.function.foxpro</string>
+			<!-- <string>support.function.foxpro</string> -->
+			<string>keyword.control.foxpro</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -392,10 +394,6 @@
 			<key>name</key>
 			<string>string.quoted.bracket.foxpro</string>
 		</dict>
-
-		
-
-
 		<dict>
 			<key>captures</key>
 			<dict>

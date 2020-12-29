@@ -1,15 +1,19 @@
 {
 	"name": "foxpro",
-	"displayName": "FoxPro Syntax Highlighting",
-	"description": "Syntax Highlighting and Snippets for Visual FoxPro",
+	"displayName": "VFPweb开发扩展工具",
+	"description": "用于VFPweb开发的代码高亮、自动补全（仅支持后端，前端html和JS不进行操作）",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/newdatasystems/vscode-foxpro.git"
 	},
+	"activationEvents": [
+        "*"
+    ],
+    "main": "./src/extension",
 	"icon": "fox.png",
 	"homepage": "https://github.com/newdatasystems/vscode-foxpro",
 	"version": "1.4.8",
-	"author": "Tom Bellin",
+	"author": "BenXin",
 	"publisher": "newdatasystems",
 	"engines": {
 		"vscode": "^1.8.0"
@@ -21,7 +25,7 @@
 	"contributes": {
 		"configurationDefaults": {
 			"[foxpro]": {
-				"files.encoding": "windows1252"
+				"files.encoding": "gb18030"
 			}
 		},
 		"languages": [
@@ -34,9 +38,12 @@
 				],
 				"extensions": [
 					".prg",
-					".PRG"
+					".PRG",
+					".fwx",
+					".FWX"
 				],
-				"configuration": "./foxpro-configuration.json"
+				"configuration": "./foxpro-configuration.json",
+				"registerDefinitionProvider":"provideCompletionItems"
 			}
 		],
 		"snippets": [
@@ -45,6 +52,16 @@
 				"path": "./snippets/foxpro_snippets.json"
 			}
 		],
+		"autoClosingPairs": [
+			{ "open": "{", "close": "}" },
+			{ "open": "[", "close": "]" },
+			{ "open": "(", "close": ")" },
+			{ "open": "'", "close": "'", "notIn": ["string", "comment"] },
+			{ "open": "\"", "close": "\"", "notIn": ["string"] },
+			{ "open": "`", "close": "`", "notIn": ["string", "comment"] },
+			{ "open": "/**", "close": " */", "notIn": ["string"] }
+		  ],
+		  "autoCloseBefore": ";:.,=}])>` \n\t",
 		"grammars": [
 			{
 				"language": "foxpro",

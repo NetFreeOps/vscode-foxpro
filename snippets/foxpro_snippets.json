@@ -154,7 +154,6 @@
 		"description": "Simple foxpro procedure call"
 	},
 
-    // [internal]
 	"fSelectStatement": {
 		"prefix": "fs",
 		"body": [
@@ -165,7 +164,6 @@
 		"description": "Simple fSelectStatment (internal)"
 	},
 
-    // [internal]
 	"fChooserDao": {
 		"prefix": "fchooser",
 		"body": [
@@ -182,7 +180,6 @@
 		"description": "Template code for preparing a query and display a chooser dialog (internal)"
 	},
 
-    // [internal]
 	"fSelectStatement.IntoObject": {
 		"prefix": "fso",
 		"body": [
@@ -194,7 +191,6 @@
 		"description": "Simple fSelectStatment with an output into a data object (internal)"
 	},
 
-    // [internal]
 	"fSelectStatement.IntoValue": {
 		"prefix": "fsv",
 		"body": [
@@ -207,7 +203,6 @@
 		"description": "Simple fSelectStatment outputing a scalar value (internal)"
 	},
 
-    // [internal]
 	"fStoredProcedure": {
 		"prefix": "fsp",
 		"body": [
@@ -219,7 +214,6 @@
 		"description": "Simple fStoredProcedure"
 	},
 
-    // [internal]
 	"fUpdateStatement": {
 		"prefix": "fup",
 		"body": [
@@ -233,7 +227,6 @@
 		"description": "Simple fUpdateStatement (internal)"
 	},
 
-    // [internal]
 	"fInsertStatement": {
 		"prefix": "fin",
 		"body": [
@@ -246,7 +239,6 @@
 		"description": "Simple fUpdateStatement (internal)"
 	},
 
-    // [internal]
 	"fDeleteStatement": {
 		"prefix": "fdel",
 		"body": [
@@ -301,7 +293,6 @@
 		"description":"Define class with functional call to instantiate"
 	},
  
-    // [internal]
 	"Define StoredProcedure Class (internal)": {
 		"prefix": "dcsp",
 		"body": [
@@ -316,8 +307,6 @@
 		"description":"Define a storedprocedure class (internal)"
 	},
 
-    // multiprompt
-    // [internal]
     "Multiprompt Definition": {
         "prefix": "multi",
         "body": [
@@ -337,7 +326,6 @@
 
     "Multiprompt Text Field": {
         "prefix": "mptext",
-        // TextProduct ~C Product ~E <<rcProduct>> ~W <<! SYSONEPROD>> ~V qck('qckprod',@{1})
         "body": "${1:TextFieldName} ~C ${2:Caption} ~E <<${3:pcInitialValue}>> ~V ${4:ValidEvent(@{1})}",
         "description": "Generic text field definition for multiprompt (internal)"
     },
@@ -373,34 +361,28 @@
     },
     "Multiprompt Group Field": {
         "prefix": "mpgroup",
-        // GroupContract ~T GROUP ~F LAYOUT ~SH MIDDLE 10
         "body": "${1:GroupName} ~T Group ~F Layout ~S${2|V,H|} 10",
         "description": "Generic group definition for multiprompt (internal)"
     },
 
     "Multiprompt Label Field": {
         "prefix": "mplabel",
-        //LabelMustBeAccount ~T LABEL ~C <<qw(tcAccount)>> ~B FIXED,10,N ~G GroupAccount
         "body": "${1:LabelName} ~T LABEL ~C ${2:Caption} ~EC <<${3:lcLabelContent}>> ~B FIXED,10,N",
         "description": "Generic checkbox field definition for multiprompt (internal)"
     },
 
     "Multiprompt Range Field": {
         "prefix": "mprange",
-        //PurchaseRange ~C From ~T Range ~E <<rcPurchaseRangeLow>>||<<rcPurchaseRangeHigh>> ~W {CheckPurchase} ~G PurchaseGroup
         "body": "${1:RangeName} ~T RANGE ~C ${2:From} ~E <<${3:lcRangeLow}>>||<<${4:lcRangeHigh}>>",
         "description": "Generic range entry field definition for multiprompt (internal)"
     },
 
     "Multiprompt Note Field": {
 		"prefix": "mpnote",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": "${1:MemoName} ~T EDIT ~C ${2:Caption} ~@C <<${3:pcNote}>>",
 		"description": "Generic memo field definition for multiprompt (internal)"
 	},
 
-	// dao helpers
-	// [internal]
     "DataAccessObject.Open": {
 		"prefix": "dopen",
 		"body": [
@@ -423,35 +405,30 @@
 
 	"dal.Where (full)": {
 		"prefix": "dwcomplete",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".Where('${1:Field}',${2:lcTestValue},.f.,'${3:TableAlias}')",
 		"description": "Full .Where clause for dal/dao statement (internal)"
 	},
 
 	"dal.Where (simple)": {
 		"prefix": "dw",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".Where('${1:Field}',${2:lcTestValue})",
 		"description": "Basic .Where clause for dal/dao statement (internal)"
 	},
 
 	"dal.WhereEmptyString": {
 		"prefix": "dwempty",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".WhereEmptyString('${1:Field}','${2:TableAlias}')",
 		"description": "Basic .WhereEmptyString clause for dal/dao statement (internal)"
 	},
 
 	"dal.WhereTrue": {
 		"prefix": "dwtrue",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".WhereTrue('${1:Field}','${2:TableAlias}')",
 		"description": "Basic .WhereTrue clause for dal/dao statement (internal)"
 	},
 
 	"dal.WhereFalse": {
 		"prefix": "dwfalse",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".WhereTrue('${1:Field}','${2:TableAlias}')",
 		"description": "Basic .WhereTrue clause for dal/dao statement (internal)"
 	},
@@ -465,7 +442,7 @@
 			"\t\t.Iterate(${4:CursorField})",
 			"\tENDSCAN",
 			"\t.CompleteIterable()",
-			"ENDWITH",
+			"ENDWITH"
 		],
 		"description": "WhereInList_Iterable for dal/dao statement (internal)"
 	},
@@ -481,43 +458,38 @@
 
 	"dal.Fields": {
 		"prefix": "dfields",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".Fields('${1:Field1,Field2,Field3}','${2:TableAlias}')",
 		"description": "Field list for dal/dao select statement (internal)"
 	},	
 
 	"dal.Set": {
 		"prefix": "dset",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".Set('${1:Field}',${2:lcValue})",
 		"description": "Set statement for dal/dao insert/update statement (internal)"
 	},
 
 	"dal.SetObject": {
 		"prefix": "dsetobject",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".SetObject(${1:loData},'${2:Include1,Include2,Include3}','${3:Exclude1,tcExclude2,Exclude3}')",
 		"description": "SetObject statement for dal/dao insert/update statement (internal)"
 	},
 
 	"dal.IntoObject": {
 		"prefix": "dinobject",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": "${1:loData} = .IntoObject($2)",
 		"description": ".IntoObject to return the resultset as an object (internal)"
 	},	
 
 	"dal.IntoValue": {
 		"prefix": "dinvalue",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": "${1:lcValue} = .IntoValue($2)",
 		"description": ".IntoValue return the resultset as a scalar value (internal)"
 	},	
 
 	"dal.IntoCursor": {
 		"prefix": "dincursor",
-		//    TextMemoNote ~C Note ~@C m.pcNote ~T Memo
 		"body": ".IntoCursor('${1:TempCursor}')",
 		"description": ".IntoValue return the resultset as a foxpro cursor (internal)"
-	},	
+	}
+
 }
